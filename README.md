@@ -23,11 +23,11 @@ Open your browser and navigate to http://localhost:3000.
 ## Screenshots
 
 ### Main Page
-![Main Interface](./screenshots/App-main.png)
+![Main Interface](./Screenshots/App-main.png)
 
 ### Task Completing
-![Task Completion](./screenshots/Completing.png)
+![Task Completion](./Screenshots/Completing.png)
 
 ### Task Uncomplete
-![Task Uncomplete](./screenshots/Uncompleting.png)
+![Task Uncomplete](./Screenshots/Uncompleting.png)
 
