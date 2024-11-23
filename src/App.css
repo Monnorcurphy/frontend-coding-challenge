@@ -1,0 +1,111 @@
+/* header - HEX:#383e54
+ header text - #d4d5d9
+ overdue todo - #ffcccc
+ completed todo - #cbffcc
+ regular todo - #f3f3f3
+
+*/
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.header-bar {
+  background-color: #383e54;
+  color: #d4d5d9;
+  width: 100vw;
+  margin: -20px -20px 15px -20px;
+  padding: 10px 20px;
+}
+
+.header-text {
+  font-size: 1.5rem;
+  color: #d4d5d9;
+}
+
+.loading {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 500px;
+}
+
+/* Green background for completed tasks */
+.todo-item.completed {
+  background-color: #cbffcc;
+  color: black;
+}
+
+.todo-item.overdue {
+  background-color: #ffcccc;
+}
+
+/* Style for the task description (line-through for completed tasks) */
+.todo-item .completed-text {
+  text-decoration: line-through;
+  color: black;
+}
+
+/* Checkbox styles for completed tasks */
+input[type="checkbox"]:checked {
+  accent-color: #4caf50;
+}
+
+/* Dates with 1px black border and aligned to the right */
+.due-date {
+  font-size: 0.9rem;
+  color: black;
+  border: 1px solid black;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 10px;
+  text-align: right;
+  max-width: min-content
+}
+
+
+/* Styling for the todo item */
+.todo-item label {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the checkbox */
+input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Styling for the todo description */
+span {
+  flex-grow: 1;
+}
+
+.todo-item {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  margin: 10px;
+  background-color: #f3f3f3;
+  color: black;
+}
+
+.completing-todos {
+  margin: 0 auto;
+  width: 30vw;
+  padding: 10px;
+  background: #cbffcc;
+}
+
+.completing-todos.uncompleting {
+  background: #ffcccc;
+}
