@@ -18,7 +18,6 @@ const App = () => {
 
   // Toggle the completion status of a todo
   const handleCompleteChange = async (id, isComplete, description) => {
-    debugger;
     setCompletingTodo({
       id,
       description,

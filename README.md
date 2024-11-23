@@ -20,3 +20,14 @@ REACT_APP_API_KEY= (your api key here)
 ```
 Open your browser and navigate to http://localhost:3000.
 
+## Screenshots
+
+### Main Page
+![Main Interface](./screenshots/App-main.png)
+
+### Task Completing
+![Task Completion](./screenshots/Completing.png)
+
+### Task Uncomplete
+![Task Uncomplete](./screenshots/Uncompleting.png)
+
