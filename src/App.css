@@ -106,6 +106,70 @@ span {
   background: #cbffcc;
 }
 
+<<<<<<< Updated upstream
 .completing-todos.uncompleting {
   background: #ffcccc;
+=======
+.high-contrast .completing-todos.uncompleting {
+  background: #ec0000;
+}
+
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark .header-bar {
+  background-color: #002347;
+  color: #ffffff;
+}
+
+.dark .header-text {
+  font-size: 2rem;
+}
+
+.dark .completing-todos {
+  font-size: 1.2rem;
+  background-color: #2e2e2e;
+}
+
+.dark .todo-item {
+  background-color: #f4f6f3;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.dark .todo-item.completed {
+  background-color: #00b200;
+}
+
+.dark .todo-item.overdue {
+  background-color: #CB1303;
+}
+
+.dark .due-date {
+  border-color: black;
+  font-size: 1.1rem;
+}
+
+.dark .completing-todos {
+  margin: 0 auto;
+  width: 30vw;
+  padding: 10px;
+  background: #00b200;
+}
+
+.dark .completing-todos.uncompleting {
+  background: #CB1303;
+}
+
+.social-media-maxxing-video {
+  display: flex;
+  justify-content: center;
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+>>>>>>> Stashed changes
 }

@@ -71,6 +71,15 @@ const App = () => {
     <div className="App">
       <header className='header-bar'>
         <h1 className='header-text'>Todo App</h1>
+<<<<<<< Updated upstream
+=======
+        <select value={theme} onChange={handleThemeChange}>
+          <option value="default">Default</option>
+          <option value="dark">Dark</option>
+          <option value="high-contrast">High Contrast</option>
+          <option value="social-media-maxxing">Social Media Maxxing</option>
+        </select>
+>>>>>>> Stashed changes
       </header>
       {completingTodo && (
         <div className={`completing-todos ${completingTodo.action !== 'completing' ? 'uncompleting' : ''}`}>
@@ -89,6 +98,7 @@ const App = () => {
                 />
                 <span className={todo.isComplete ? 'completed-text' : ''}>{todo.description}</span>
               </div>
+<<<<<<< Updated upstream
               {todo.dueDate && (
                 <span className="due-date">
                   {new Date(todo.dueDate).toLocaleDateString()}
@@ -98,6 +108,17 @@ const App = () => {
           </li>
         ))}
       </ul>
+=======
+            </li>
+          ))}
+        </ul>
+        {theme === 'social-media-maxxing' && (
+          <div className="social-media-maxxing-video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ChBg4aowzX8?si=-g0Fy7qgMgLqOngz&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        )}
+      </main>
+>>>>>>> Stashed changes
     </div>
   );
 };
