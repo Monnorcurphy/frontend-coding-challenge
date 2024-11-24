@@ -6,6 +6,12 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [completingTodo, setCompletingTodo] = useState(null);
+  const [theme, setTheme] = useState('default');
+
+  const handleThemeChange = (event) => {
+    setTheme(event.target.value);
+  };
+
 
   useEffect(() => {
     const loadTodos = async () => {
@@ -68,57 +74,59 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <header className='header-bar'>
         <h1 className='header-text'>Todo App</h1>
-<<<<<<< Updated upstream
-=======
         <select value={theme} onChange={handleThemeChange}>
           <option value="default">Default</option>
           <option value="dark">Dark</option>
           <option value="high-contrast">High Contrast</option>
           <option value="social-media-maxxing">Social Media Maxxing</option>
         </select>
->>>>>>> Stashed changes
       </header>
-      {completingTodo && (
-        <div className={`completing-todos ${completingTodo.action !== 'completing' ? 'uncompleting' : ''}`}>
-          {completingTodo.action} "{completingTodo.description}" {completingTodo.action === 'completing' ? '! Yay!' : '! Oh Noooooo!'}
-        </div>
-      )}
-      <ul className="todo-list">
-        {sortedTodos.map(todo => (
-          <li key={todo.id} className={`todo-item ${todo.isComplete ? 'completed' : ''} ${isOverdue(todo.dueDate) && !todo.isComplete ? 'overdue' : ''}`}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <input
-                  type="checkbox"
-                  checked={todo.isComplete}
-                  onChange={() => handleCompleteChange(todo.id, todo.isComplete, todo.description)}
-                />
-                <span className={todo.isComplete ? 'completed-text' : ''}>{todo.description}</span>
+      <main>
+        {completingTodo && (
+          <div
+            className={`completing-todos ${completingTodo.action !== 'completing' ? 'uncompleting' : ''}`}
+            role="status"
+            aria-live="polite"
+          >
+            {completingTodo.action} "{completingTodo.description}" {completingTodo.action === 'completing' ? '! Yay!' : '! Oh Noooooo!'}
+          </div>
+        )}
+        <ul className="todo-list">
+          {sortedTodos.map(todo => (
+            <li
+              key={todo.id}
+              className={`todo-item ${todo.isComplete ? 'completed' : ''} ${isOverdue(todo.dueDate) && !todo.isComplete ? 'overdue' : ''}`}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <input
+                    type="checkbox"
+                    id={`todo-${todo.id}`}
+                    checked={todo.isComplete}
+                    onChange={() => handleCompleteChange(todo.id, todo.isComplete, todo.description)}
+                    aria-label={`Mark "${todo.description}" as ${todo.isComplete ? 'incomplete' : 'complete'}`}
+                  />
+                  <label htmlFor={`todo-${todo.id}`} className={todo.isComplete ? 'completed-text' : ''}>{todo.description}</label>
+                </div>
+                {todo.dueDate && (
+                  <span className="due-date">
+                    {new Date(todo.dueDate).toLocaleDateString()}
+                  </span>
+                )}
               </div>
-<<<<<<< Updated upstream
               {todo.dueDate && (
                 <span className="due-date">
                   {new Date(todo.dueDate).toLocaleDateString()}
                 </span>
               )}
-            </div>
-          </li>
-        ))}
-      </ul>
-=======
+
             </li>
           ))}
         </ul>
-        {theme === 'social-media-maxxing' && (
-          <div className="social-media-maxxing-video">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ChBg4aowzX8?si=-g0Fy7qgMgLqOngz&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-        )}
       </main>
->>>>>>> Stashed changes
     </div>
   );
 };
