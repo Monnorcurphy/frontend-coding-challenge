@@ -23,10 +23,10 @@ Open your browser and navigate to http://localhost:3000.
 Future thoughts
 
 Test a screen reader to see how it navigates elements
-Test other visual updates
-Allow adding/editing of todos
-Make sure hard refresh doesn't undo updating todos
-Theming changes should be more modular so we can apply global themes and change as needed. Also utilize system updates for dark theme by default if the user already has that set.
+- Test other visual updates. 
+- Allow adding/editing of todos.
+- Make sure hard refresh doesn't undo updating todos.
+- Theming changes should be more modular so we can apply global themes and change as needed. Also utilize system updates for dark theme by default if the user already has that set.
 
 
 ## Screenshots
