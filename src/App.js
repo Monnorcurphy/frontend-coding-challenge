@@ -24,7 +24,10 @@ const App = () => {
   }, []);
 
   // Toggle the completion status of a todo
-  const handleCompleteChange = async (id, isComplete, description) => {
+  const handleCompleteChange = async (id, isComplete, description, event) => {
+    if (event && event.key !== 'Enter') {
+      return;
+    }
     setCompletingTodo({
       id,
       description,
@@ -116,6 +119,7 @@ const App = () => {
                     id={`todo-${todo.id}`}
                     checked={todo.isComplete}
                     onChange={() => handleCompleteChange(todo.id, todo.isComplete, todo.description)}
+                    onKeyDown={(event) => handleCompleteChange(todo.id, todo.isComplete, todo.description, event)}
                     aria-label={`Mark "${todo.description}" as ${todo.isComplete ? 'incomplete' : 'complete'}`}
                   />
                   <label htmlFor={`todo-${todo.id}`} className={todo.isComplete ? 'completed-text' : ''}>{todo.description}</label>
