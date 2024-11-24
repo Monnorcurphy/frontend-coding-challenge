@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchTodos, updateTodoStatus } from './api';
+import BounceLoader from "react-spinners/BounceLoader";
 import './App.css';
 
 const App = () => {
@@ -61,8 +62,17 @@ const App = () => {
   if (loading) {
     return (
       <div className="loading">
-        <div className="loading-spinner"></div>
-        <div className="loading-text">Loading your todos...</div>
+        <header className='header-bar'>
+          <h1 className='header-text'>Todo App</h1>
+        </header>
+        <div className="loading-content">
+          <div className="loading-text">Loading your todos...</div>
+          <BounceLoader
+            loading={loading}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
       </div>
     );
   }

@@ -11,6 +11,24 @@
   padding: 20px;
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.loading-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-text {
+  margin-bottom: 20px;
+}
+
 .header-bar {
   background-color: #383e54;
   color: #d4d5d9;
@@ -33,8 +51,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
-  width: 50%;
-  min-width: 500px;
+  min-width: 350px;
 }
 
 /* Green background for completed tasks */
