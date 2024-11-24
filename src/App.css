@@ -1,14 +1,12 @@
-/* header - HEX:#383e54
- header text - #d4d5d9
- overdue todo - #ffcccc
- completed todo - #cbffcc
- regular todo - #f3f3f3
-
-*/
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
 .App {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .loading {
@@ -32,77 +30,32 @@
 .header-bar {
   background-color: #383e54;
   color: #d4d5d9;
-  width: 100vw;
-  margin: -20px -20px 15px -20px;
   padding: 10px 20px;
 }
 
 .header-text {
   font-size: 1.5rem;
-  color: #d4d5d9;
+  margin: 0;
 }
 
-.loading {
-  font-size: 1.5rem;
-  color: #333;
+.completing-todos {
+  margin: 0 auto;
+  width: 30vw;
+  padding: 10px;
+  background: #cbffcc;
+}
+
+.completing-todos.uncompleting {
+  background: #ffcccc;
 }
 
 .todo-list {
+  flex: 1;
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
+  width: 50%;
   min-width: 350px;
-}
-
-/* Green background for completed tasks */
-.todo-item.completed {
-  background-color: #cbffcc;
-  color: black;
-}
-
-.todo-item.overdue {
-  background-color: #ffcccc;
-}
-
-/* Style for the task description (line-through for completed tasks) */
-.todo-item .completed-text {
-  text-decoration: line-through;
-  color: black;
-}
-
-/* Checkbox styles for completed tasks */
-input[type="checkbox"]:checked {
-  accent-color: #4caf50;
-}
-
-/* Dates with 1px black border and aligned to the right */
-.due-date {
-  font-size: 0.9rem;
-  color: black;
-  border: 1px solid black;
-  padding: 2px 5px;
-  border-radius: 4px;
-  margin-left: 10px;
-  text-align: right;
-  max-width: min-content
-}
-
-
-/* Styling for the todo item */
-.todo-item label {
-  display: flex;
-  align-items: center;
-}
-
-/* Styling for the checkbox */
-input[type="checkbox"] {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-/* Styling for the todo description */
-span {
-  flex-grow: 1;
 }
 
 .todo-item {
@@ -116,13 +69,141 @@ span {
   color: black;
 }
 
-.completing-todos {
+.todo-item.completed {
+  background-color: #cbffcc;
+}
+
+.todo-item.overdue {
+  background-color: #ffcccc;
+}
+
+.todo-item .completed-text {
+  text-decoration: line-through;
+}
+
+.todo-item label {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #4caf50;
+}
+
+.due-date {
+  font-size: 0.9rem;
+  border: 1px solid black;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 10px;
+  text-align: right;
+  max-width: min-content;
+}
+
+.high-contrast {
+  background-color: black;
+  color: white;
+}
+
+.high-contrast .header-bar {
+  background-color: white;
+  color: black;
+}
+
+.high-contrast .header-text {
+  font-size: 2rem;
+}
+
+.high-contrast .completing-todos {
+  font-size: 1.2rem;
+}
+
+.high-contrast .completed .todo-item {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  font-size: 1.2rem;
+}
+
+.high-contrast .todo-item.completed {
+  background-color: #00b100;
+}
+
+.high-contrast .todo-item.overdue {
+  background-color: #ec0000;
+}
+
+
+.high-contrast .overdue .due-date {
+  border-color: white;
+}
+
+.high-contrast .due-date {
+  border-color: black;
+  font-size: 1.1rem;
+}
+
+.high-contrast .completing-todos {
   margin: 0 auto;
   width: 30vw;
   padding: 10px;
-  background: #cbffcc;
+  background: #00b100;
 }
 
-.completing-todos.uncompleting {
-  background: #ffcccc;
+.high-contrast .completing-todos.uncompleting {
+  background: #ec0000;
+}
+
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark .header-bar {
+  background-color: #002347;
+  color: #ffffff;
+}
+
+.dark .header-text {
+  font-size: 2rem;
+}
+
+.dark .completing-todos {
+  font-size: 1.2rem;
+  background-color: #2e2e2e;
+}
+
+.dark .todo-item {
+  background-color: #f4f6f3;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.dark .todo-item.completed {
+  background-color: #00b200;
+}
+
+.dark .todo-item.overdue {
+  background-color: #CB1303;
+}
+
+.dark .due-date {
+  border-color: black;
+  font-size: 1.1rem;
+}
+
+.dark .completing-todos {
+  margin: 0 auto;
+  width: 30vw;
+  padding: 10px;
+  background: #00b200;
+}
+
+.dark .completing-todos.uncompleting {
+  background: #CB1303;
 }
