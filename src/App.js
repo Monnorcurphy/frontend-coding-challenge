@@ -18,7 +18,10 @@ const App = () => {
   }, []);
 
   // Toggle the completion status of a todo
-  const handleCompleteChange = async (id, isComplete, description) => {
+  const handleCompleteChange = async (id, isComplete, description, event) => {
+    if (event && event.key !== 'Enter') {
+      return;
+    }
     setCompletingTodo({
       id,
       description,
@@ -96,6 +99,7 @@ const App = () => {
                   type="checkbox"
                   checked={todo.isComplete}
                   onChange={() => handleCompleteChange(todo.id, todo.isComplete, todo.description)}
+                  onKeyDown={(event) => handleCompleteChange(todo.id, todo.isComplete, todo.description, event)}
                 />
                 <span className={todo.isComplete ? 'completed-text' : ''}>{todo.description}</span>
               </div>
